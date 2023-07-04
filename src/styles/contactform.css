@@ -1,0 +1,432 @@
+.modal--open nav,
+.modal--open .scroll,
+.modal--open .header {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 400ms ease;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.modal--open .modal {
+  z-index: 60;
+  box-shadow: 0 20px 80px 0 rgba(0, 0, 0, 0.55);
+  visibility: visible;
+}
+
+.modal--open .modal__about,
+.modal--open .modal__contact {
+  transform: translateX(0%);
+}
+.modal__half {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  height: 92%;
+  padding: 40px 72px;
+  position: relative;
+  border-radius: 24px;
+  margin: 0px 12px;
+  transition: all 300ms ease-in;
+  color: white;
+}
+
+
+.modal-holder{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1300px;
+  height: 640px;
+  padding: 60px;
+  background-color: #242424;
+  border-radius: 12px;
+}
+
+
+.modal__about {
+  transform: translateX(-110%);
+  background-color: #242424;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  height: 100%;
+  padding: 40px 72px;
+  position: relative;
+  border-radius: 24px;
+  margin: 0px 12px;
+  transition: all 300ms ease;
+  color: white;
+}
+
+
+.modal__languages {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.modal__language {
+  width: 25%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 300ms ease;
+  border: 2px solid #242424;
+  border-radius: 180px;
+  padding: 4px 0px 8px 0px;
+  margin: 12px;
+  cursor: pointer;
+  
+}
+
+.language__name {
+  position: absolute;
+  bottom: -10px;
+  transform: scale(0);
+  transition: all 300ms ease;
+}
+
+
+
+.modal__language:hover {
+  transform: scale(0.9);
+  border: 2px solid red;
+  background-color: red;
+  border-radius: 180px;
+}
+
+.modal__langauage--img {
+  width: 100%;
+  font-size: 20px;
+  margin: 16px;
+}
+
+.modal__contact {
+  transform: translateX(110%);
+  background-color: #242424;
+  color: #242424;
+  background-color: white;
+}
+
+.modal__title {
+  font-size: 26px;
+}
+
+.about__titles{
+  margin-top: 32px;
+}
+.modal__title--about{
+  font-size: 44px;
+}
+
+.modal__subtitle {
+  margin: 12px 0 24px 0;
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+.modal__para {
+  margin-bottom: 12px;
+  line-height: 1.75;
+}
+
+
+
+.form__item {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+textarea {
+  width: 100%;
+  background-color: white;
+  color: #242424;
+  outline: none;
+  border: 2px solid #c0c4cc;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  height: 40px;
+  transition: all 300ms ease;
+}
+textarea {
+  resize: vertical;
+  height: 100px;
+  margin-top: 8px;
+  padding: 8px;
+}
+
+.form__submit {
+  background-color: #d90000;
+  border: 2px solid #d90000;
+  color: white;
+  font-weight: bold;
+  max-width: 240px;
+  width: 100%;
+  padding: 12px 24px;
+  font-size: 20px;
+  transition: all 300ms ease;
+}
+
+.form__submit:hover {
+  border-color: #000000;
+  background-color: transparent;
+  color: #000000;
+}
+.form__submit:active {
+  border-color: #0074d9;
+  color: #0074d9;
+}
+
+.modal__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+}
+
+.modal__overlay--loading {
+  background-color: #242424;
+  font-size: 80px;
+}
+
+.modal__overlay--visible {
+  z-index: 1;
+  display: flex;
+}
+
+.fa-spinner {
+  animation: spinner 750ms infinite linear;
+}
+
+.modal__overlay--success {
+  background-color: #4bb543;
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+  padding: 28px;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.modal__exit {
+  position: absolute;
+  top: 100px;
+  right: 255px;
+  color: #ffffff;
+  font-size: 36px;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.modal--open {
+  z-index: 60;
+  box-shadow: 0 20px 80px 0 rgba(0, 0, 0, 0.55);
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal--closed {
+  display: none;
+}
+
+.fa-spinner{
+  color: white;
+}
+
+.contact__links--div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact__link{
+  color: #ffffff;
+}
+
+.contact__link--li{
+  margin: 12px 0px;
+  padding: 16px 12px;
+  border-radius: 8px;
+  border: 1px solid #242424;
+  display: flex;
+  align-items: center;
+  transition: all 800ms ease;
+
+
+}
+
+.contact__link--li:hover{
+  border: 1px solid red;
+  background-color: #d9000017;
+}
+
+.contact__icon{
+  font-size: 32px;
+  margin-right: 16px;
+  transition: all 100ms ease;
+}
+
+.contact__link--li:hover .contact__icon{
+  color: red;
+ 
+
+}
+
+button{
+ cursor: pointer;
+}
+/* Your existing CSS */
+/* ... */
+
+@media only screen and (max-width: 767px) {
+
+  .modal {
+    padding: 20px;
+  }
+
+    .modal-holder {
+    flex-direction: column;
+  }
+
+  .modal__half {
+    width: 100%;
+    height: auto; /* adjust as needed */
+  }
+
+
+  .modal__about{
+    margin-top: 0px;
+  }
+
+  .modal__contact{
+    padding-bottom: 100px;
+  }
+ 
+
+  
+
+  .modal__about,
+  .modal__contact {
+    width: 100%;
+  position: relative;
+  border-radius: 24px;
+  margin: 0px 
+  }
+
+  .modal__title {
+    font-size: 20px;
+  }
+
+  .modal__title--about {
+    font-size: 24px;
+  }
+
+  .modal__subtitle {
+    font-size: 12px;
+  }
+
+  .modal__para {
+    font-size: 14px;
+  }
+
+  .form__item {
+    margin-bottom: 10px;
+  }
+
+  .form__item--label{
+    font-size: 16px;
+
+  }
+
+  input,
+  textarea {
+    font-size: 14px;
+    width: 90%;
+  }
+
+  textarea{
+    height: 20px;
+  }
+
+  .form__submit {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+
+ 
+  .contact__icon {
+    font-size: 16px;
+  }
+  
+
+  .contact__link--li {
+    margin: 6px 0px;
+    padding: 8px 6px;
+    font-size: 12px;
+  }
+
+  .modal__language{
+    padding: 0;
+    width: 20%;
+  }
+
+  .modal__exit {
+    position: absolute;
+    top: 15px;
+    right: 44px;
+    color: #ffffff;
+    font-size: 28px;
+    z-index: 100;
+    cursor: pointer;
+  }
+
+  .input{
+    font-size: 12px;
+  }
+
+  .form__submit{
+    width: 180px;
+    margin-top: 4px;
+    padding: 4px;
+  }
+
+  .modal-holder{
+    height: 600px;
+  }
+
+
+}
