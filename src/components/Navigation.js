@@ -55,6 +55,15 @@ function Navigation() {
           </li>
           <li>
             <Link
+              to="/shop"
+              smooth
+              className="navbar-link link__hover--effect link__hover--effect--white"
+            >
+              Shop
+            </Link>
+          </li>
+          <li>
+            <Link
               to="/#contact-us"
               onClick={toggleModal}
               smooth

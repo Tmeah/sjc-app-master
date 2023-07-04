@@ -9,6 +9,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import ContactForm from "./components/ContactForm";
 import "@fontsource/roboto";
 import "@fontsource/nunito";
+import Shop from "./components/Shop";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -25,6 +26,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/shop" element={<Shop />} />
           </Routes>
         </div>
         {isModalOpen && <ContactForm onClose={toggleModal} />}

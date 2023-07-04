@@ -1,0 +1,50 @@
+.banner-logos{
+    color: white;
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.banner-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    padding: 12px;
+    max-width: 100%;
+    width: 400px;
+}
+
+.banner-logo-text{
+    font-size: 28px;
+    margin-left: 12px;
+}
+
+.banner-logo-img{
+    color: red;
+}
+
+.shop-item-container{
+background-color: red;
+width: 100%;
+}
+
+.shop-item-links{
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 100%;
+    width: 1600px;
+    margin: 0 auto;
+}
+
+.shop-item-link{
+    padding: 8px;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+}
+
+.shop-item-link:hover{
+    transition: all 300ms ease;
+    background-color: black;
+}
