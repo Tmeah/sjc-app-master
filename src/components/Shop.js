@@ -3,7 +3,6 @@ import  "../styles/shop.css"
 import React, { useEffect, /*useRef*/ useState } from "react";
 
 import { FaInstagram, FaShippingFast,FaCoins } from "react-icons/fa";
-import { GiCoinsPile } from "react-icons/gi";
 import { FaWrench } from "react-icons/fa";
 
 import { createClient } from "contentful";
