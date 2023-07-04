@@ -3,7 +3,7 @@ import brands from "../images/brands-removebg.png";
 import blob from "../images/blob.svg";
 import merc from "../images/merc.png";
 import "../styles/homepage.css";
-
+import {GiMechanicGarage} from "react-icons/gi"
 import { MdOutlineSecurity } from "react-icons/md";
 import { FaQuoteRight, FaWrench, FaVolumeUp, FaParking } from "react-icons/fa";
 import { AiFillRightCircle, AiFillLeftCircle } from "react-icons/ai";
