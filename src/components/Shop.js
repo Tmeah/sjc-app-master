@@ -6,7 +6,7 @@ import {  FaShippingFast,FaCoins } from "react-icons/fa";
 import { FaWrench, FaArrowLeft } from "react-icons/fa";
 
 import { createClient } from "contentful";
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+// import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import offer from '../images/offer.png'
 import placeholder from '../images/placeholder.jpg'
 
@@ -135,8 +135,20 @@ MOTORHOME
 
       </div> */}
 
-{selectedSection === 'stereoscreens' && <div>    
-   <img src={placeholder} alt="" />
+{selectedSection === 'stereoscreens' &&
+
+<div className="sub-categories">    
+   <img src={placeholder} alt="" className="placeholder" />
+   <img src={placeholder} alt="" className="placeholder" />
+   <img src={placeholder} alt="" className="placeholder" />
+   <img src={placeholder} alt="" className="placeholder" />
+   <img src={placeholder} alt="" className="placeholder" />
+   <img src={placeholder} alt="" className="placeholder" />
+   <img src={placeholder} alt="" className="placeholder" />
+
+
+
+   
 </div>}
 
 
