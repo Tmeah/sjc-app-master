@@ -18,7 +18,7 @@ function Shop() {
 
   useEffect(() => {
     client
-      .getEntries({ content_type: "gallery" })
+      .getEntries({ content_type: "gallery"})
       .then((response) => setGalleries(response.items))
       .catch(console.error);
   });
