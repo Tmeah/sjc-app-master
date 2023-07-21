@@ -2,10 +2,14 @@ import "../styles/gallery.css";
 import  "../styles/shop.css"
 import React, { useEffect, /*useRef*/ useState } from "react";
 
-import { FaInstagram, FaShippingFast,FaCoins } from "react-icons/fa";
-import { FaWrench } from "react-icons/fa";
+import {  FaShippingFast,FaCoins } from "react-icons/fa";
+import { FaWrench, FaArrowLeft } from "react-icons/fa";
 
 import { createClient } from "contentful";
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import offer from '../images/offer.png'
+import placeholder from '../images/placeholder.jpg'
+
 
 const client = createClient({
   space: "yl6ypwr5g4ob",
@@ -15,25 +19,33 @@ const client = createClient({
 
 function Shop() {
   const [galleries, setGalleries] = useState([]);
+  const [selectedSection, setSelectedSection] = useState('shopLanding'); // Default section
+
 
   useEffect(() => {
     client
-      .getEntries({ content_type: "gallery"})
+      .getEntries({ content_type: "shopProduct"})
       .then((response) => setGalleries(response.items))
       .catch(console.error);
   });
 
-  return (
-    <section className="section2" id="shop">
-      <div className="gallery-title">
-      </div>
+  const handleSectionSelection = (section) => {
+    setSelectedSection(section);
+  };
 
+  return (
+    <section className="shop-section" id="shop">
+   
       <div className="shop-item-container">
 
 <ul className="shop-item-links">
-<li class="shop-item-link">
-STEREO/SCREENS
+
+<li class="shop-item-link" onClick={() => handleSectionSelection('shopLanding')}>
+  <FaArrowLeft/>
 </li>
+<li class="shop-item-link" onClick={() => handleSectionSelection('stereoscreens')}>
+          STEREO/SCREENS
+        </li>
 <li class="shop-item-link"> 
 SPEAKERS/SUBS 
 </li>
@@ -98,37 +110,36 @@ MOTORHOME
         </div>
       </div>
 
-      <div className="cards car-cards">
-        {galleries.map((gallery) => (
-          <div key={gallery.sys.id} className="container-pics">
-            <div className="pic--card">
-              <div className="pic-card--img">
-                {gallery.fields.carpics.map((pic) => (
-                  <>
-                    <div className="first-content">
-                      <img
-                        key={pic.sys.id}
-                        src={pic.fields.file.url}
-                        alt={pic.fields.title}
-                        style={{ width: "100%" }} // adjust this as necessary
-                      />
-                    </div>
-                    <div className="second-content">
-                      <p>
-                        {pic.fields.title}
-                        {pic.fields.description &&
-                          `: ${pic.fields.description}`}
-                      </p>
-                      <FaInstagram className="insta-logo" />
-                    </div>
-                    <div className="hover-overlay"></div>
-                  </>
-                ))}
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+      {selectedSection === 'shopLanding' && 
+      <div className="shop-landing">
+        <img src={offer} alt="" className="offer-img" />
+        <button className="shop-now-button">SHOP NOW</button>
+      </div>}
+
+      {/* <div className="cards car-cards">
+      {galleries.map((product) => (
+  <div key={product.sys.id} className="product-card">
+    <img
+      src={product.fields.image.fields.file.url}
+      alt={product.fields.title}
+      style={{ width: "100%" }}
+    />
+    <h2>{product.fields.title}</h2>
+    <p>Price: £{product.fields.price}</p>
+    <div dangerouslySetInnerHTML={{__html: documentToHtmlString(product.fields.description)}} />
+    <div dangerouslySetInnerHTML={{__html: documentToHtmlString(product.fields.features)}} />
+    <div dangerouslySetInnerHTML={{__html: documentToHtmlString(product.fields.deliveryInfo)}} />
+    <div dangerouslySetInnerHTML={{__html: documentToHtmlString(product.fields.returnInfo)}} />
+  </div>
+))}
+
+      </div> */}
+
+{selectedSection === 'stereoscreens' && <div>    
+   <img src={placeholder} alt="" />
+</div>}
+
+
     </section>
   );
 }

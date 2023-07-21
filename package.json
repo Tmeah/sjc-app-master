@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@contentful/rich-text-html-renderer": "^16.1.0",
     "@fontsource/inter": "^4.5.15",
     "@fontsource/nunito": "^4.5.12",
     "@fontsource/open-sans": "^4.5.14",
