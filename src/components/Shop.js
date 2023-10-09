@@ -1,25 +1,20 @@
 import "../styles/gallery.css";
 import "../styles/shop.css";
 import React, { useEffect, /*useRef*/ useState } from "react";
-import { CheckoutForm } from "../components/CheckoutForm.js";
-import {
-  FaShippingFast,
-  FaCoins,
-  FaWrench,
-  FaHome,
-  FaShoppingBasket,
-} from "react-icons/fa";
+
+import { FaShippingFast, FaCoins } from "react-icons/fa";
+import { FaWrench, FaArrowLeft } from "react-icons/fa";
+
+import { createClient } from "contentful";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import offer from "../images/offer.png";
 import placeholder from "../images/placeholder.jpg";
-import { loadStripe } from "@stripe/stripe-js";
-import { Elements } from "@stripe/react-stripe-js";
-import ProductSection from "./ProductSection";
-import Modal from "./Modal";
-import ModalProduct from "./ModalProduct";
 
-const stripePromise = loadStripe(
-  "pk_test_51Nn1A4LGVdJ9rR4a6SEyNuC7MtHWqJMMwLJfMjzpBryvja6cuxiEa7CqmVXsmJ2GTNr07tzSiO6octmCx9Gr6h2x00KcUQVq6i"
-);
+const client = createClient({
+  space: "yl6ypwr5g4ob",
+  environment: "master", // defaults to 'master' if not set
+  accessToken: "RSTYXHOz79kc6Tw29CE4up1gjVqjVYySh7_rK04Onac",
+});
 
 function Shop() {
   const [selectedSection, setSelectedSection] = useState("shopLanding"); // Default section
@@ -169,204 +164,28 @@ function Shop() {
         </div>
       )}
 
+      {/* <div className="cards car-cards">
+      {galleries.map((product) => (
+  <div key={product.sys.id} className="product-card">
+    <img
+      src={product.fields.image.fields.file.url}
+      alt={product.fields.title}
+      style={{ width: "100%" }}
+    />
+    <h2>{product.fields.title}</h2>
+    <p>Price: £{product.fields.price}</p>
+    <div dangerouslySetInnerHTML={{__html: documentToHtmlString(product.fields.description)}} />
+    <div dangerouslySetInnerHTML={{__html: documentToHtmlString(product.fields.features)}} />
+    <div dangerouslySetInnerHTML={{__html: documentToHtmlString(product.fields.deliveryInfo)}} />
+    <div dangerouslySetInnerHTML={{__html: documentToHtmlString(product.fields.returnInfo)}} />
+  </div>
+))}
+
+      </div> */}
+
       {selectedSection === "stereoscreens" && (
-        <ProductSection
-          productType="stereo"
-          addToCart={addToCart}
-          subsections={[
-            "Screen Stereos",
-            "Double Din",
-            "Single Din",
-            "Screen Accessories",
-          ]}
-        />
-      )}
-
-      {selectedSection === "speakers" && (
-        <ProductSection
-          productType="stereo"
-          addToCart={addToCart}
-          subsections={[
-            "Coaxial",
-            "Components",
-            "Mid Woofers",
-            "Sub Woofers",
-            "Subwoofers With Box",
-            "Tweeters",
-            "Marine Speakers & Subs",
-          ]}
-        />
-      )}
-
-      {selectedSection === "amps" && (
-        <ProductSection
-          productType="stereo"
-          addToCart={addToCart}
-          subsections={[
-            "Amplifiers",
-            "Processors/Crossovers/EQ",
-            "Power Capacitors",
-            "Essential Add-Ons",
-          ]}
-        />
-      )}
-
-      {selectedSection === "bass" && (
-        <ProductSection
-          productType="stereo"
-          addToCart={addToCart}
-          subsections={[
-            "Active & Passive Boxes",
-            "Single Sub Bass Deals",
-            "Double Sub Bass Deals",
-            "Speaker & Amp Deals",
-          ]}
-        />
-      )}
-
-      {selectedSection === "accessories" && (
-        <ProductSection
-          productType="stereo"
-          addToCart={addToCart}
-          subsections={[
-            "Stereo Fitting Accessories",
-            "Amplifier Fitting Accessories",
-            "Installation Accessories",
-            "Audio/Visual Accessories",
-            "Speaker Fitting Accessories",
-            "Bluetooth Kit & Accessories",
-          ]}
-        />
-      )}
-
-      {selectedSection === "security" && (
-        <ProductSection
-          productType="stereo"
-          addToCart={addToCart}
-          subsections={[
-            "Car Alarms & Accessories",
-            "Parking Sensor Kits",
-            "Vehicle Trackers",
-            "ODB Port Security",
-            "Laser/Speed Camera Detectors",
-          ]}
-        />
-      )}
-
-      {selectedSection === "styling" && (
-        <ProductSection
-          productType="stereo"
-          addToCart={addToCart}
-          subsections={[
-            "Rotiform Wheels",
-            "Alloy Wheel Accessories",
-            "Performance Styling",
-            "Performance Tuning",
-            "Liberty Walk",
-          ]}
-        />
-      )}
-
-      {selectedSection === "airride" && (
-        <ProductSection
-          productType="stereo"
-          addToCart={addToCart}
-          subsections={[
-            "Complete Air Ride Kits",
-            "Front Air Kits",
-            "Rear Air Kits",
-            "Air Ride Management",
-            "Accessories",
-            "Builder Series",
-          ]}
-        />
-      )}
-
-      {selectedSection === "dashcams" && (
-        <ProductSection
-          productType="stereo"
-          addToCart={addToCart}
-          subsections={[
-            "Alpine",
-            "BlackVue",
-            "Kenwood",
-            "Pioneer",
-            "Thinkware",
-          ]}
-        />
-      )}
-
-      {selectedSection === "motorhome" && (
-        <ProductSection
-          productType="stereo"
-          addToCart={addToCart}
-          subsections={[
-            "Navigation & Multimedia Receivers",
-            "Stereo Installation Accessories",
-            "Complete Multimedia Bundles",
-            "Audio Upgrade",
-            "Reverse Cameras",
-          ]}
-        />
-      )}
-
-      {selectedSection === "basket" && (
-        <div className="cart-display">
-          <h2 className="cart-title">Cart Items</h2>
-          {cart.map((item) => (
-            <div className="cart-item" key={item.id}>
-              <div className="cart-item-des">
-                <img src={item.image} alt={item.name} className="small-image" />
-                {item.name}
-              </div>
-              £{item.price}
-              <button
-                onClick={() => decreaseQuantity(item.id)}
-                className="cart-btn"
-              >
-                -
-              </button>
-              Quantity {item.quantity}
-              <button
-                onClick={() => increaseQuantity(item.id)}
-                className="cart-btn"
-              >
-                +
-              </button>
-              <button
-                onClick={() => removeFromCart(item.id)}
-                className="cart-btn-remove"
-              >
-                Remove
-              </button>
-            </div>
-          ))}
-          <div className="cart-total">
-            Total: £
-            {cart.reduce((acc, item) => acc + item.price * item.quantity, 0)}
-          </div>
-
-          {/* Conditionally render the checkout button */}
-          {cart.length > 0 && (
-            <button onClick={() => setIsModalOpen(true)} className="modal-btn">
-              Proceed to Checkout
-            </button>
-          )}
-
-          {cart.length <= 0 && (
-            <h1 className="empty-basket-h1">
-              Your Basket is looking kind of empty...
-            </h1>
-          )}
-
-          <Modal isOpen={isModalOpen} close={() => setIsModalOpen(false)}>
-            <Elements stripe={stripePromise}>
-              <CheckoutForm
-                totalAmount={cartTotal}
-                cartDescriptions={cartDescriptions}
-              />
-            </Elements>
-          </Modal>
+        <div>
+          <img src={placeholder} alt="" />
         </div>
       )}
     </section>
