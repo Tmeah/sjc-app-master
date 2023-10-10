@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import "../styles/modalproduct.css";
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import placeholder from "../images/placeholder.jpg";
 import { BiLeftArrow } from "react-icons/bi";
-import Shop from "./Shop";
 
 function ModalProduct({ product, onClose, addToCart, getProductImageUrl }) {
   const [expandedSection, setExpandedSection] = useState(null);

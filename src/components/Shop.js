@@ -10,12 +10,10 @@ import {
   FaShoppingBasket,
 } from "react-icons/fa";
 import offer from "../images/offer.png";
-import placeholder from "../images/placeholder.jpg";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import ProductSection from "./ProductSection";
 import Modal from "./Modal";
-import ModalProduct from "./ModalProduct";
 
 const stripePromise = loadStripe(
   "pk_test_51Nn1A4LGVdJ9rR4a6SEyNuC7MtHWqJMMwLJfMjzpBryvja6cuxiEa7CqmVXsmJ2GTNr07tzSiO6octmCx9Gr6h2x00KcUQVq6i"

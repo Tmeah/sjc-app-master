@@ -3,7 +3,12 @@ import placeholder from "../images/placeholder.jpg";
 import "../styles/productsection.css";
 import { createClient } from "contentful";
 import ModalProduct from "./ModalProduct";
-import { FaArrowLeft } from "react-icons/fa";
+
+const client = createClient({
+  space: "yl6ypwr5g4ob",
+  environment: "master",
+  accessToken: "RSTYXHOz79kc6Tw29CE4up1gjVqjVYySh7_rK04Onac",
+});
 
 function ProductSection({ addToCart, productType, subsections }) {
   const [selectedSubsection, setSelectedSubsection] = useState(null);
@@ -20,12 +25,6 @@ function ProductSection({ addToCart, productType, subsections }) {
   const handleModalClose = () => {
     setSelectedProduct(null);
   };
-
-  const client = createClient({
-    space: "yl6ypwr5g4ob",
-    environment: "master",
-    accessToken: "RSTYXHOz79kc6Tw29CE4up1gjVqjVYySh7_rK04Onac",
-  });
 
   const handleSubsectionClick = (subsection) => {
     setProducts([]);
