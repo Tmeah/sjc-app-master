@@ -3,7 +3,7 @@ import { HashLink as Link } from "react-router-hash-link"; // import HashLink fr
 import logo from "../images/sjclogo.png";
 import "../styles/nav.css";
 import ContactForm from "./ContactForm";
-import { Container } from "react-bootstrap";
+// import { Container } from "react-bootstrap";
 
 function Navigation() {
   const [isModalOpen, setIsModalOpen] = useState(false);

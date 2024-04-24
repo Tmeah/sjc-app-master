@@ -2,7 +2,7 @@ import "../styles/gallery.css";
 import React, { useEffect, useRef, useState } from "react";
 
 // At the top of your Gallery component file
-import Slider from "react-slick";
+// import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -10,27 +10,27 @@ import { FaInstagram } from "react-icons/fa";
 
 import { createClient } from "contentful";
 
-const settings = {
-  dots: true, // Show dot indicators at the bottom of the carousel
-  infinite: true, // Infinite looping
-  speed: 500, // Animation speed
-  slidesToShow: 3, // Number of slides to show at once
-  slidesToScroll: 1, // Number of slides to scroll at once
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 2,
-      },
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 1,
-      },
-    },
-  ],
-};
+// const settings = {
+//   dots: true, // Show dot indicators at the bottom of the carousel
+//   infinite: true, // Infinite looping
+//   speed: 500, // Animation speed
+//   slidesToShow: 3, // Number of slides to show at once
+//   slidesToScroll: 1, // Number of slides to scroll at once
+//   responsive: [
+//     {
+//       breakpoint: 1024,
+//       settings: {
+//         slidesToShow: 2,
+//       },
+//     },
+//     {
+//       breakpoint: 600,
+//       settings: {
+//         slidesToShow: 1,
+//       },
+//     },
+//   ],
+// };
 
 const client = createClient({
   space: "yl6ypwr5g4ob",
