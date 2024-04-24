@@ -3,6 +3,7 @@ import { HashLink as Link } from "react-router-hash-link"; // import HashLink fr
 import logo from "../images/sjclogo.png";
 import "../styles/nav.css";
 import ContactForm from "./ContactForm";
+import { Container } from "react-bootstrap";
 
 function Navigation() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -35,15 +36,7 @@ function Navigation() {
               Services
             </Link>
           </li>
-          <li>
-            <Link
-              to="/gallery"
-              smooth
-              className="navbar-link link__hover--effect link__hover--effect--white"
-            >
-              Gallery
-            </Link>
-          </li>
+
           <li>
             <Link
               to="/#about-us"
@@ -53,6 +46,16 @@ function Navigation() {
               About Us
             </Link>
           </li>
+          <li>
+            <Link
+              to="/gallery"
+              smooth
+              className="navbar-link link__hover--effect link__hover--effect--white"
+            >
+              Our Work
+            </Link>
+          </li>
+
           <li>
             <Link
               to="/shop"

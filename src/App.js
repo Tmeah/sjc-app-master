@@ -26,7 +26,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/gallery" element={<Gallery />} />
-            <Route path="/shop" element={<Shop />}/>
+            <Route path="/shop" element={<Shop />} />
           </Routes>
         </div>
         {isModalOpen && <ContactForm onClose={toggleModal} />}

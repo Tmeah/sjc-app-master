@@ -3,7 +3,7 @@ import brands from "../images/brands-removebg.png";
 import blob from "../images/blob.svg";
 import merc from "../images/merc.png";
 import "../styles/homepage.css";
-import {GiMechanicGarage} from "react-icons/gi"
+import { GiMechanicGarage } from "react-icons/gi";
 import { MdOutlineSecurity } from "react-icons/md";
 import { FaQuoteRight, FaWrench, FaVolumeUp, FaParking } from "react-icons/fa";
 import { AiFillRightCircle, AiFillLeftCircle } from "react-icons/ai";
@@ -133,7 +133,7 @@ function Homepage() {
               <div className="card__content">
                 <FaVolumeUp className="icon" />
 
-                <p class="card__title">AUDIO ENTERTAINMENT</p>
+                <p className="card__title">AUDIO ENTERTAINMENT</p>
                 <p>
                   Soluta dolor praesentium at quod autem omnis, amet earum
                   nesciunt porro.
@@ -148,7 +148,7 @@ function Homepage() {
               <div className="card__content">
                 <FaParking className="icon" />
 
-                <p class="card__title">PARKING AIDS</p>
+                <p className="card__title">PARKING AIDS</p>
                 <p>
                   Soluta dolor praesentium at quod autem omnis, amet earum
                   nesciunt porro.
@@ -247,73 +247,125 @@ function Homepage() {
           <h2>Answers to our most common questions.</h2>
         </div>
         <div className="faq-main">
-
-
-<div class="faq-content">
-  <div class="faq-question">
-    <input id="q1" type="checkbox" class="panel" />
-    <div class="plus">+</div>
-    <label for="q1" class="panel-title">What types of vehicles are you able to service?</label>
-    <div class="panel-content">Our garage can service a broad range of vehicles including cars, SUVs, trucks, and vans of both domestic and foreign brands.</div>
-  </div>
-  <div class="faq-question">
-    <input id="q2" type="checkbox" class="panel" />
-    <div class="plus">+</div>
-    <label for="q2" class="panel-title">Do you offer regular vehicle maintenance?</label>
-    <div class="panel-content">Absolutely, we provide a suite of regular maintenance services, from oil changes and brake check-ups to tire rotations, and much more.</div>
-  </div>
-  <div class="faq-question">
-    <input id="q3" type="checkbox" class="panel" />
-    <div class="plus">+</div>
-    <label for="q3" class="panel-title">What kind of parts do you use for repairs?</label>
-    <div class="panel-content">We utilize high-quality OEM and aftermarket parts in our repairs to ensure the durability and reliability of your vehicle.</div>
-  </div>
-  <div class="faq-question">
-    <input id="q4" type="checkbox" class="panel" />
-    <div class="plus">+</div>
-    <label for="q4" class="panel-title">Is there a warranty for your services?</label>
-    <div class="panel-content">Yes, we provide a warranty on all our repair services. For detailed information, please feel free to contact us.</div>
-  </div>
-  <div class="faq-question">
-    <input id="q5" type="checkbox" class="panel" />
-    <div class="plus">+</div>
-    <label for="q5" class="panel-title">Can I book a service appointment online?</label>
-    <div class="panel-content">Yes, you can book an appointment either via our website or by calling us directly.</div>
-  </div>
-  <div class="faq-question">
-    <input id="q6" type="checkbox" class="panel" />
-    <div class="plus">+</div>
-    <label for="q6" class="panel-title">Do you have any ongoing discounts or promotions?</label>
-    <div class="panel-content">We regularly run promotions and special discounts. You can check our website or get in touch with us for current offers.</div>
-  </div>
-  <div class="faq-question">
-    <input id="q7" type="checkbox" class="panel" />
-    <div class="plus">+</div>
-    <label for="q7" class="panel-title">What should I do if my car breaks down outside of your business hours?</label>
-    <div class="panel-content">In case your vehicle breaks down outside our business hours, you can call our emergency number or a local towing service. We'll coordinate to have your vehicle delivered to our garage.</div>
-  </div>
-  <div class="faq-question">
-    <input id="q8" type="checkbox" class="panel" />
-    <div class="plus">+</div>
-    <label for="q8" class="panel-title">Do you conduct emissions tests?</label>
-    <div class="panel-content">Yes, we conduct emissions testing and can provide all the necessary documentation required for vehicle registration or renewal.</div>
-  </div>
-  <div class="faq-question">
-    <input id="q9" type="checkbox" class="panel" />
-    <div class="plus">+</div>
-    <label for="q9" class="panel-title">Can I wait in your garage while my vehicle is being serviced?</label>
-    <div class="panel-content">Yes, we have a comfortable waiting area with complimentary Wi-Fi and refreshments. However, please note that some services may take a few hours to complete, so it may be more convenient to drop off your vehicle.</div>
-  </div>
-  <div class="faq-question">
-    <input id="q10" type="checkbox" class="panel" />
-    <div class="plus">+</div>
-    <label for="q10" class="panel-title">Do you offer vehicle inspections?</label>
-    <div class="panel-content">Yes, we offer comprehensive vehicle inspections to ensure your vehicle is safe and in excellent running condition.</div>
-  </div>
-</div>
+          <div className="faq-content">
+            <div className="faq-question">
+              <input id="q1" type="checkbox" className="panel" />
+              <div className="plus">+</div>
+              <label htmlFor="q1" className="panel-title">
+                What types of vehicles are you able to service?
+              </label>
+              <div className="panel-content">
+                Our garage can service a broad range of vehicles including cars,
+                SUVs, trucks, and vans of both domestic and foreign brands.
+              </div>
+            </div>
+            <div className="faq-question">
+              <input id="q2" type="checkbox" className="panel" />
+              <div className="plus">+</div>
+              <label htmlFor="q2" className="panel-title">
+                Do you offer regular vehicle maintenance?
+              </label>
+              <div className="panel-content">
+                Absolutely, we provide a suite of regular maintenance services,
+                from oil changes and brake check-ups to tire rotations, and much
+                more.
+              </div>
+            </div>
+            <div className="faq-question">
+              <input id="q3" type="checkbox" className="panel" />
+              <div className="plus">+</div>
+              <label htmlFor="q3" className="panel-title">
+                What kind of parts do you use for repairs?
+              </label>
+              <div className="panel-content">
+                We utilize high-quality OEM and aftermarket parts in our repairs
+                to ensure the durability and reliability of your vehicle.
+              </div>
+            </div>
+            <div className="faq-question">
+              <input id="q4" type="checkbox" className="panel" />
+              <div className="plus">+</div>
+              <label htmlFor="q4" className="panel-title">
+                Is there a warranty for your services?
+              </label>
+              <div className="panel-content">
+                Yes, we provide a warranty on all our repair services. For
+                detailed information, please feel free to contact us.
+              </div>
+            </div>
+            <div className="faq-question">
+              <input id="q5" type="checkbox" className="panel" />
+              <div className="plus">+</div>
+              <label htmlFor="q5" className="panel-title">
+                Can I book a service appointment online?
+              </label>
+              <div className="panel-content">
+                Yes, you can book an appointment either via our website or by
+                calling us directly.
+              </div>
+            </div>
+            <div className="faq-question">
+              <input id="q6" type="checkbox" className="panel" />
+              <div className="plus">+</div>
+              <label htmlFor="q6" className="panel-title">
+                Do you have any ongoing discounts or promotions?
+              </label>
+              <div className="panel-content">
+                We regularly run promotions and special discounts. You can check
+                our website or get in touch with us for current offers.
+              </div>
+            </div>
+            <div className="faq-question">
+              <input id="q7" type="checkbox" className="panel" />
+              <div className="plus">+</div>
+              <label htmlFor="q7" className="panel-title">
+                What should I do if my car breaks down outside of your business
+                hours?
+              </label>
+              <div className="panel-content">
+                In case your vehicle breaks down outside our business hours, you
+                can call our emergency number or a local towing service. We'll
+                coordinate to have your vehicle delivered to our garage.
+              </div>
+            </div>
+            <div className="faq-question">
+              <input id="q8" type="checkbox" className="panel" />
+              <div className="plus">+</div>
+              <label htmlFor="q8" className="panel-title">
+                Do you conduct emissions tests?
+              </label>
+              <div className="panel-content">
+                Yes, we conduct emissions testing and can provide all the
+                necessary documentation required for vehicle registration or
+                renewal.
+              </div>
+            </div>
+            <div className="faq-question">
+              <input id="q9" type="checkbox" className="panel" />
+              <div className="plus">+</div>
+              <label htmlFor="q9" className="panel-title">
+                Can I wait in your garage while my vehicle is being serviced?
+              </label>
+              <div className="panel-content">
+                Yes, we have a comfortable waiting area with complimentary Wi-Fi
+                and refreshments. However, please note that some services may
+                take a few hours to complete, so it may be more convenient to
+                drop off your vehicle.
+              </div>
+            </div>
+            <div className="faq-question">
+              <input id="q10" type="checkbox" className="panel" />
+              <div className="plus">+</div>
+              <label htmlFor="q10" className="panel-title">
+                Do you offer vehicle inspections?
+              </label>
+              <div className="panel-content">
+                Yes, we offer comprehensive vehicle inspections to ensure your
+                vehicle is safe and in excellent running condition.
+              </div>
+            </div>
+          </div>
         </div>
-        
-         
       </section>
     </main>
   );

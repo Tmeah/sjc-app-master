@@ -38,20 +38,20 @@ function Footer() {
           </li>
           <li>
             <Link
-              to="/gallery"
-              smooth
-              className="footer-link link__hover--effect link__hover--effect--white"
-            >
-              Gallery
-            </Link>
-          </li>
-          <li>
-            <Link
               to="/#about-us"
               smooth
               className="footer-link link__hover--effect link__hover--effect--white"
             >
               About Us
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/gallery"
+              smooth
+              className="footer-link link__hover--effect link__hover--effect--white"
+            >
+              Our Work
             </Link>
           </li>
           <li>
