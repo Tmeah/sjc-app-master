@@ -182,6 +182,8 @@ j .carousel {
   font-size: 28px;
 }
 
+
+
 /* footer css */
 
 .footer-div {
@@ -259,6 +261,10 @@ j .carousel {
 
 .link__hover--effect--white:after {
   background-color: white;
+}
+
+.link{
+  color: #f2f2f2;
 }
 
 .copyright {

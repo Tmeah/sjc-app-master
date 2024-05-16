@@ -7,7 +7,7 @@ import { Col } from "react-bootstrap";
 function Navigation() {
   return (
     <Col md={12} className="nav-col">
-      <Navbar expand="lg" className="" variant="dark">
+      <Navbar expand="lg" className="" variant="">
         <Container>
           <Navbar.Brand href="#home">
             <img src={logo} width={180} height={80} alt="educam-logo" />
