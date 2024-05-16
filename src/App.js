@@ -1,38 +1,26 @@
-import "./App.css";
-import React, { useState } from "react";
+import React from "react";
 import Navigation from "./components/Navigation";
-import HomePage from "./components/Homepage";
+import Home from "./components/Home";
+import Cards from "./components/Cards";
+import About from "./components/About";
+import "./styles/style.css";
+import Pricing from "./components/Pricing";
+import Process from "./components/Process";
 import Footer from "./components/Footer";
-import Gallery from "./components/Gallery";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import ScrollToTop from "./components/ScrollToTop";
-import ContactForm from "./components/ContactForm";
-import "@fontsource/roboto";
-import "@fontsource/nunito";
-import Shop from "./components/Shop";
+import FAQ from "./components/Faq";
 
 function App() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const toggleModal = () => {
-    setIsModalOpen(!isModalOpen);
-  };
   return (
-    <Router>
-      <ScrollToTop />
-      <React.Fragment>
-        <div style={{ zIndex: 10, position: "relative" }}>
-          <Navigation toggleModal={toggleModal} />
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/shop" element={<Shop />} />
-          </Routes>
-        </div>
-        {isModalOpen && <ContactForm onClose={toggleModal} />}
-        <Footer />
-      </React.Fragment>
-    </Router>
+    <div>
+      <Navigation />
+      <Home />
+      <About />
+      <Process />
+      <Cards />
+      <Pricing />
+      <FAQ />
+      <Footer />
+    </div>
   );
 }
 

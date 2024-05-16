@@ -1,88 +1,40 @@
-import React, { useState } from "react";
-import { HashLink as Link } from "react-router-hash-link"; // import HashLink from react-router-hash-link
-import logo from "../images/sjclogo.png";
-import "../styles/nav.css";
-import ContactForm from "./ContactForm";
-// import { Container } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import logo from "../imgs/EduCam-dark.png";
+import { Col } from "react-bootstrap";
 
 function Navigation() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const toggleModal = () => {
-    setIsModalOpen(!isModalOpen);
-  };
-
   return (
-    <div className="navbar-div">
-      <div className="nav-logo-div">
-        <img src={logo} alt="" className="nav-logo" />
-      </div>
-      <div className="navbar-links-div">
-        <ul className="navbar-links">
-          <li>
-            <Link
-              to="/"
-              smooth
-              className="navbar-link link__hover--effect link__hover--effect--white"
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/#services"
-              smooth
-              className="navbar-link link__hover--effect link__hover--effect--white"
-            >
-              Services
-            </Link>
-          </li>
-
-          <li>
-            <Link
-              to="/#about-us"
-              smooth
-              className="navbar-link link__hover--effect link__hover--effect--white"
-            >
-              About Us
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/gallery"
-              smooth
-              className="navbar-link link__hover--effect link__hover--effect--white"
-            >
-              Our Work
-            </Link>
-          </li>
-
-          <li>
-            <Link
-              to="/shop"
-              smooth
-              className="navbar-link link__hover--effect link__hover--effect--white"
-            >
-              Shop
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/#contact-us"
-              onClick={toggleModal}
-              smooth
-              className="navbar-link link__hover--effect link__hover--effect--white"
-            >
-              Contact Us
-            </Link>
-          </li>
-        </ul>
-      </div>
-      <div className={`modal ${isModalOpen ? "modal--open" : ""}`}>
-        {isModalOpen && (
-          <ContactForm onClose={toggleModal} isModalOpen={isModalOpen} />
-        )}
-      </div>
-    </div>
+    <Col md={12} className="nav-col">
+      <Navbar expand="lg" className="" variant="dark">
+        <Container>
+          <Navbar.Brand href="#home">
+            <img src={logo} width={180} height={80} alt="educam-logo" />
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="ms-auto mt-4">
+              <Nav.Link href="#home" className="mx-4 link">
+                Home
+              </Nav.Link>
+              <Nav.Link href="#link" className="mx-4 link">
+                About
+              </Nav.Link>
+              <Nav.Link href="#link1" className="mx-4 link">
+                Services
+              </Nav.Link>
+              <Nav.Link href="#link2" className="mx-4 link">
+                Testimonials
+              </Nav.Link>
+              <Nav.Link href="#link3" className="ms-4 link">
+                Contact
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </Col>
   );
 }
 

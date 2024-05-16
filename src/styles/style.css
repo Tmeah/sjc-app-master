@@ -1,0 +1,569 @@
+/* Import Jost font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap");
+@import url("https://fonts.cdnfonts.com/css/brockmann");
+
+/* General Styles */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Brockmann", sans-serif;
+  background-color: #2f2f2f; /* Light background color for the page */
+  color: #f2f2f2; /* Default text color */
+}
+
+.superscript {
+  vertical-align: super; /* Aligns the text as superscript */
+  font-size: 32px; /* Makes the font size smaller than the surrounding text */
+}
+
+.educam {
+  color: white; /* Sets the text color to white */
+  text-shadow:
+    -1.5px -1.5px 0 #000,
+    1.5px -1.5px 0 #000,
+    -1.5px 1.5px 0 #000,
+    1.5px 1.5px 0 #000; /* Creates a thicker black outline around the text */
+}
+
+
+
+.text-with-svg-underline {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.text-with-svg-underline svg {
+  display: block;
+  width: 100%; /* Adjust this as needed */
+  height: auto; /* This might need tuning based on your specific SVG */
+  position: absolute;
+  left: 0;
+  bottom: -24px; /* Adjust this value based on your text size and desired underline position */
+}
+
+.full-container {
+  background-color: #f2f2f2;
+}
+
+.navbar {
+  color: #2f2f2f;
+  border-radius: 20px;
+  margin-top: 24px;
+}
+
+@keyframes fadeBackground {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.home-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: #f2f2f2;
+  min-height: 90vh;
+  overflow: hidden; /* Ensures the pseudo-element does not exceed the container boundary */
+}
+
+.home-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' x2='0' y1='0' y2='1'%3E%3Cstop offset='0' stop-color='%232F2F2F'/%3E%3Cstop offset='1' stop-color='%23FF0000'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpattern id='b' width='24' height='24' patternUnits='userSpaceOnUse'%3E%3Ccircle fill='%232F2F2F' cx='12' cy='12' r='12'/%3E%3C/pattern%3E%3Crect width='100%25' height='100%25' fill='url(%23a)'/%3E%3Crect width='100%25' height='100%25' fill='url(%23b)' fill-opacity='0.1'/%3E%3C/svg%3E");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 0; /* Ensures the background is behind all other content */
+  animation: fadeBackground 4s linear infinite;
+}
+
+/* Ensure that text and other content are placed above the animated background */
+.home-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+.landing-img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.landing-header {
+  margin-top: -60px;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.landing-text {
+  font-size: 20px;
+}
+
+.landing-btn {
+  background-color: #ff7043; /* Bright Coral for visibility */
+  color: #ffffff; /* White text */
+  border: none; /* No border, but you could add a teal border if preferred */
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px; /* Rounded corners for a modern look */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.landing-btn:hover,
+.price-btn:hover,
+.custom-btn:hover {
+  background-color: #f83a00;
+}
+
+.landing-btn:active,
+.price-btn:active,
+.custom-btn:hover {
+  background-color: #f83a00 !important; /* A darker shade for hover effect */
+}
+
+.custom-btn {
+  background-color: #ff7043;
+  color: #ffffff; /* Ensures text is white for better readability */
+  border: #ff7043;
+}
+
+.price-btn:active {
+  background-color: #00bfa6b4 !important;
+  border-color: #00bfa6 !important;
+}
+
+.green-txt {
+  color: #00bfa6;
+}
+
+.icons-txt {
+  display: flex !important;
+  align-items: center !important;
+  width: 60%;
+  margin-left: 12px;
+}
+
+.testimonials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+j .carousel {
+  width: 600px;
+  height: 400px;
+}
+
+.process-container {
+  margin-top: 120px;
+}
+.process-circle {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em; /* Adjust size as needed */
+  background-color: #00bfa6; /* or any color you prefer */
+  color: white; /* Text color */
+  margin: 0 auto; /* Center in column */
+}
+
+.circle-txt {
+  font-size: 28px;
+}
+
+/* footer css */
+
+.footer-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  background-color: #242424;
+}
+
+.footer-links {
+  margin-top: 32px;
+  display: flex;
+  flex-wrap: wrap; /* Allows nav links to wrap in smaller screens */
+  justify-content: center; /* Centers links when they wrap */
+}
+
+.footer-links-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-link {
+  position: relative;
+  color: white;
+  margin: 0px 24px;
+}
+
+.footer-logo{
+  margin: 24px 0px;
+}
+
+
+
+/* Media Queries for smaller screens */
+@media (max-width: 768px) {
+  .footer-links {
+    flex-direction: column;
+  }
+
+  .landing-header {
+    margin-top: 50px;
+    font-size: 48px;
+    font-weight: bold;
+  }
+
+  .landing-text {
+    font-size: 16px;
+  }
+
+  .home-container {
+    padding-bottom: 40px;
+  }
+    .copyright{
+    font-size: 70%;
+  }
+}
+
+.link__hover--effect:after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 0%;
+  bottom: -3px;
+  left: 0;
+  transition: all 300ms ease;
+}
+.link__hover--effect:hover:after {
+  width: 100%;
+  right: 0;
+}
+
+.link__hover--effect--white:after {
+  background-color: white;
+}
+
+.copyright {
+  margin-top: 40px;
+  color: white;
+}
+
+button {
+  background-color: inherit;
+  border: none;
+  font-size: 16px;
+}
+
+.feature-logo {
+  padding: 8px;
+  height: 80px;
+  width: 80px;
+  border: 2px solid rgba(128, 128, 128, 0.514);
+  border-radius: 260px;
+  background-color: white;
+}
+
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  height: 600px;
+  box-shadow: 0 4px 8px #009884;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.pricing-card .card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Forces the card body to expand and fill the space */
+  justify-content: space-between; /* Spreads content to fill the available space, aligning button at the bottom */
+}
+
+.pricing-subtitle {
+  font-size: 44px;
+  font-weight: bold;
+}
+
+.price-btn {
+  background-color: #ff7043; /* Bright Coral for visibility */
+  color: #ffffff; /* White text */
+  border: none; /* No border, but you could add a teal border if preferred */
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px; /* Rounded corners for a modern look */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.testimonial-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.testimonial-card {
+  margin: 0 20px;
+  background-color: #fff; /* White background */
+  box-shadow: 0 4px 8px 0 rgba(0, 128, 0, 0.2); /* Green shadow */
+  transition: box-shadow 0.3s; /* Smooth transition for box-shadow */
+}
+
+.testimonial-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 128, 0, 0.2); /* Intensify shadow on hover */
+}
+
+.arrow-btn {
+  background: none;
+  border: none;
+  color: white; /* White arrow */
+  cursor: pointer;
+  font-size: 32px; /* Size of the arrow icon */
+  transition: transform 0.2s; /* Smooth transition for arrow buttons */
+}
+
+.arrow-btn:hover {
+  transform: scale(1.2); /* Slightly enlarge arrows on hover */
+}
+
+.left-arrow,
+.right-arrow {
+  background-color: #00bfa6; /* Green background for arrows */
+  border-radius: 50%; /* Circle shape */
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial-text {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.testimonial-rating {
+  color: gold;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.testimonial-author {
+  font-style: italic;
+}
+
+/* Add to your style.css */
+
+/* Transition for the testimonial card change */
+.testimonial-card {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+/* ...repeat for each index or use JavaScript to dynamically adjust the opacity */
+
+.marquee {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: 100px;
+  border-radius: 32px;
+}
+
+.marquee-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(300%);
+  position: absolute;
+  animation: marqueeAnimation 40s linear infinite;
+}
+
+@keyframes marqueeAnimation {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee img {
+  width: 150px;
+  height: auto;
+  margin-right: 50px;
+}
+
+.wjec-logo {
+  height: 80px !important;
+}
+
+/* cards */
+
+/* Custom card styling */
+.edu-card {
+  height: 100%; /* Ensures all cards are the same height */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions for hover effects */
+}
+
+.edu-card:hover {
+  transform: scale(1.05); /* Slightly enlarges the card on hover */
+  box-shadow: 0 8px 16px #009884; /* Darker green shadow on hover */
+}
+
+/* Ensuring that the card body flexes to layout content nicely */
+.edu-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Evenly spaces out the content vertically */
+}
+
+.edu-card-title {
+  margin-bottom: 1.5rem; /* Adds a margin at the bottom of the title */
+}
+
+.edu-card-text {
+  margin-top: 0; /* Ensures there is no extra space above the text if needed */
+}
+
+.edu-card-subtitle {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.edu-card.special-color {
+  background-color: #009884; /* Light purple, for example */
+  color: #f2f2f2;
+}
+
+/* CTA */
+.why-eduCam-container {
+  padding: 50px 50px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 32px;
+}
+
+.section-header h1 {
+  margin-bottom: 30px;
+  color: #009884; /* Consistent brand color */
+  font-weight: bold;
+}
+
+.reason-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.reason-content {
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.reason-icon {
+  width: 200px; /* More suitable size for icons */
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.reason-title {
+  font-size: 1.8rem; /* Larger, more prominent titles */
+  color: #009884; /* Brand color for titles */
+}
+
+.reason-description {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 15px; /* Increased spacing */
+}
+
+.cta-button {
+  margin-top: 20px;
+  font-size: 1.4rem;
+  padding: 12px 24px;
+  background-color: #ff7043;
+  color: #fff; /* Better contrast for readability */
+  border: none;
+  border-radius: 8px; /* Rounded corners */
+}
+
+.cta-button:hover {
+  background-color: #bf360c;
+}
+
+.review {
+  background-color: #f8f9fa; /* Light grey background to distinguish the card */
+  border-radius: 15px; /* Rounded corners for the card */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  padding: 20px; /* Padding inside the card */
+  margin: 10px 0; /* Margin around the card for spacing */
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+}
+
+.review:hover {
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2); /* Darker shadow on hover for a lifting effect */
+}
+
+.review-footer {
+  margin-top: 15px; /* Space above the footer */
+  font-weight: bold;
+  color: #009884; /* Use the brand's green color for accents */
+}
+
+.review-title {
+  font-size: 1.2rem; /* Larger font size for visibility */
+  color: #333; /* Dark grey for text */
+}
+
+.review-text {
+  font-size: 1rem;
+  color: #666; /* Medium grey for the descriptive text */
+}
+
+.accordion .card-header {
+  background-color: #f8f9fa;
+  cursor: pointer;
+}
+
+.accordion .card {
+  border: none;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.accordion .card:last-child {
+  border-bottom: 0;
+}
+
+.accordion .btn-link {
+  color: #0056b3;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.accordion .btn-link:hover {
+  color: #004495;
+}

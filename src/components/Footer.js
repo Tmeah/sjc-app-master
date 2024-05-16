@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-import { HashLink as Link } from "react-router-hash-link"; // import HashLink
-import logo from "../images/sjclogo-removebg.png";
-import "../styles/footer.css";
-
-import ContactForm from "./ContactForm";
+import { Row, Col, Image, Nav } from "react-bootstrap";
+import logo from "../imgs/EduCam-dark.png";
 
 function Footer() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -12,85 +9,61 @@ function Footer() {
   };
 
   return (
-    <div className="footer-div">
-      <div className="footer-logo-div">
-        <img src={logo} alt="" className="footer-logo" />
-      </div>
-      <div className="footer-links-div">
-        <ul className="footer-links">
-          <li>
-            <Link
-              to="/"
-              smooth
-              className="footer-link link__hover--effect link__hover--effect--white"
-            >
+    <div className="footer-div ">
+      <Row>
+        <Col>
+          <Image
+            src={logo}
+            alt=""
+            className="footer-logo"
+            width={240}
+            height={100}
+          />
+        </Col>
+      </Row>
+
+      <Row>
+        <Col>
+          <Nav className="text-center footer-links">
+            <Nav.Link href="/" onClick={toggleModal} className="footer-link">
               Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/#services"
-              smooth
-              className="footer-link link__hover--effect link__hover--effect--white"
-            >
+            </Nav.Link>
+            <Nav.Link href="/#services" className="footer-link">
               Services
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/#about-us"
-              smooth
-              className="footer-link link__hover--effect link__hover--effect--white"
-            >
+            </Nav.Link>
+            <Nav.Link href="/gallery" className="footer-link">
+              Gallery
+            </Nav.Link>
+            <Nav.Link href="/#about-us" className="footer-link">
               About Us
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/gallery"
-              smooth
-              className="footer-link link__hover--effect link__hover--effect--white"
-            >
-              Our Work
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/shop"
-              smooth
-              className="footer-link link__hover--effect link__hover--effect--white"
-            >
+            </Nav.Link>
+            <Nav.Link href="/shop" className="footer-link">
+              {" "}
               Shop
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/#contact-us"
-              onClick={toggleModal}
-              smooth
-              className="footer-link link__hover--effect link__hover--effect--white"
-            >
+            </Nav.Link>
+            <Nav.Link href="/#contact-us" className="footer-link">
               Contact Us
-            </Link>
-          </li>
-        </ul>
-        <span className="copyright">
-          Website Developed & Maintained by &copy;{" "}
-          <a
-            href="https://tausifmeah.co.uk/"
-            target="_blank"
-            className="footer-link--t"
-            rel="noreferrer"
-          >
-            <u>Tausif Meah.</u>
-          </a>
-        </span>
-      </div>
-      <div className={`modal ${isModalOpen ? "modal--open" : ""}`}>
-        {isModalOpen && (
-          <ContactForm onClose={toggleModal} isModalOpen={isModalOpen} />
-        )}
-      </div>
+            </Nav.Link>
+          </Nav>
+        </Col>
+      </Row>
+
+      <Row>
+        <Col className="text-center copyright ">
+          <span className="">
+            Website Developed & Maintained by{" "}
+            <a
+              href="https://tausifmeah.co.uk/"
+              target="_blank"
+              rel="noreferrer"
+              className="footer-link--t"
+            >
+              Tausif Meah
+            </a>
+          </span>
+        </Col>
+      </Row>
+      {/* Modal implementation can be added here */}
     </div>
   );
 }
