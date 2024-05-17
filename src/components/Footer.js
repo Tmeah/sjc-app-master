@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Row, Col, Image, Nav } from "react-bootstrap";
-import logo from "../imgs/EduCam-dark.png";
+import logo from "../imgs/logo.png";
 
 function Footer() {
   const [isModalOpen, setIsModalOpen] = useState(false);
