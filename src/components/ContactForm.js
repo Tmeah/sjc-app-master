@@ -8,7 +8,7 @@ import {
   FaLocationArrow,
   FaInstagram,
   FaFacebook,
-  FaMapMarked,
+  FaWhatsapp,
 } from "react-icons/fa";
 // import emailjs from "emailjs-com";
 
@@ -80,28 +80,43 @@ const ContactForm = ({ onClose, isModalOpen }) => {
                 </li>
               </a>
               <a
-                href="http://maps.google.com/?q=Unit 1 Leeway Court Leeway Industrial Estate Newport NP194SJ"
+                href="https://maps.app.goo.gl/6eU1SGi3VYPZZ7zL8"
                 className="contact__link"
                 target="_blank"
                 rel="noreferrer"
               >
                 <li className="contact__link--li">
                   <FaLocationArrow className="contact__icon"></FaLocationArrow>
-                  Unit 1 Leeway Court Leeway Industrial Estate Newport NP194SJ{" "}
+                  20 Leeway Industrial Estate, Newport, NP19 4SL.{" "}
                 </li>
               </a>
             </div>
 
             <div className="modal__languages">
-              <figure className="modal__language">
+              <a
+                href="https://www.facebook.com/mista.sjconcepts/"
+                target="_blank"
+                rel="noreferrer"
+                className="modal__language"
+              >
                 <FaFacebook className="modal__langauage--img"></FaFacebook>
-              </figure>{" "}
-              <figure className="modal__language">
+              </a>
+              <a
+                href="https://www.instagram.com/mistasjconcept/"
+                target="_blank"
+                rel="noreferrer"
+                className="modal__language"
+              >
                 <FaInstagram className="modal__langauage--img"></FaInstagram>
-              </figure>
-              <figure className="modal__language">
-                <FaMapMarked className="modal__langauage--img"></FaMapMarked>
-              </figure>
+              </a>
+              <a
+                href="https://wa.me/447471315153"
+                target="_blank"
+                rel="noreferrer"
+                className="modal__language"
+              >
+                <FaWhatsapp className="modal__langauage--img"></FaWhatsapp>
+              </a>
             </div>
           </div>
           <div className="modal__half modal__contact">

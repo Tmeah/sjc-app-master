@@ -56,7 +56,7 @@ function Navigation() {
             </Link>
           </li>
 
-          <li>
+          {/* <li>
             <Link
               to="/shop"
               smooth
@@ -64,7 +64,7 @@ function Navigation() {
             >
               Shop
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link
               to="/#contact-us"
