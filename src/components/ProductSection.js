@@ -5,9 +5,9 @@ import { createClient } from "contentful";
 import ModalProduct from "./ModalProduct";
 
 const client = createClient({
-  space: "yl6ypwr5g4ob",
-  environment: "master",
-  accessToken: "RSTYXHOz79kc6Tw29CE4up1gjVqjVYySh7_rK04Onac",
+  space: process.env.REACT_APP_CONTENTFUL_SPACE_ID,
+  environment: process.env.REACT_APP_CONTENTFUL_ENVIRONMENT || "master",
+  accessToken: process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN,
 });
 
 function ProductSection({ addToCart, productType, subsections }) {

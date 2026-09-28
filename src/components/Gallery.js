@@ -33,9 +33,9 @@ import { createClient } from "contentful";
 // };
 
 const client = createClient({
-  space: "yl6ypwr5g4ob",
-  environment: "master", // defaults to 'master' if not set
-  accessToken: "RSTYXHOz79kc6Tw29CE4up1gjVqjVYySh7_rK04Onac",
+  space: process.env.REACT_APP_CONTENTFUL_SPACE_ID,
+  environment: process.env.REACT_APP_CONTENTFUL_ENVIRONMENT || "master", // defaults to 'master' if not set
+  accessToken: process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN,
 });
 
 function Gallery() {
